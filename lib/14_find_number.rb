@@ -11,4 +11,29 @@ class FindNumber
     @answer = answer.value
     @guess = guess
   end
+
+  def make_guess
+    (min + max) / 2
+  end
+
+  def game_over?
+    guess == answer
+  end
+
+  def update_range
+    guess < answer ? @min = guess + 1 : @max = guess - 1
+  end
 end
+
+# class for computer to create random number
+# class RandomNumber
+#   attr_reader :min, :max, :value
+
+#   def initialize(min, max)
+#     @min = min
+#     @max = max
+#     @value = nil
+#   end
+
+#   def find_value; end
+# end
